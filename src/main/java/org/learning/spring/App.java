@@ -1,4 +1,4 @@
-package com.mkyong.core;
+package org.learning.spring;
 
 /**
  * Hello world!
