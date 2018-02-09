@@ -10,5 +10,9 @@ public class OutputHelper {
 
 	public void setIoGenerator(IOGenerator ioGenerator) {
 		this.ioGenerator = ioGenerator;
-	}	
+	}
+	
+	void generateOutput() {
+		ioGenerator.generateOutput();
+	}
 }
