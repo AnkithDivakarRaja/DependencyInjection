@@ -1,4 +1,4 @@
-package com.mkyong.core;
+package com.learning.spring;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
