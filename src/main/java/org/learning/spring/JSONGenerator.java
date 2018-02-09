@@ -4,7 +4,7 @@ public class JSONGenerator implements IOGenerator {
 
 	@Override
 	public void generateOutput() {
-		// TODO Auto-generated method stub
+		System.out.println("JSON response generated");
 
 	}
 
