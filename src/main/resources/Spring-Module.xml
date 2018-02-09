@@ -3,11 +3,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="OutputHelper" class="com.learning.spring.OutputHelper">
+	<bean id="OutputHelper" class="org.learning.spring.OutputHelper">
 		<property name="ioGenerator" ref="JSONGenerator"></property>
 	</bean>
 	
-	<bean id="JSONGenerator" class="com.learning.spring.JSONGenerator"></bean>
-	<bean id="CSVGenerator" class="com.learning.spring.CSVGenerator"></bean>
+	<bean id="JSONGenerator" class="org.learning.spring.JSONGenerator"></bean>
+	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator"></bean>
 
 </beans>
