@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="OutputHelper" class="com.learning.spring.OutputHelper">
+		<property name="outputGenerator" ref="JSONGenerator"></property>
+	</bean>
+	
+	<bean id="JSONGenerator" class="com.learning.spring.JSONGenerator"></bean>
+	<bean id="CSVGenerator" class="com.learning.spring.CSVGenerator"></bean>
+
+</beans>
