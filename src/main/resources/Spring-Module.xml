@@ -4,7 +4,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<bean id="OutputHelper" class="com.learning.spring.OutputHelper">
-		<property name="outputGenerator" ref="JSONGenerator"></property>
+		<property name="ioGenerator" ref="JSONGenerator"></property>
 	</bean>
 	
 	<bean id="JSONGenerator" class="com.learning.spring.JSONGenerator"></bean>
