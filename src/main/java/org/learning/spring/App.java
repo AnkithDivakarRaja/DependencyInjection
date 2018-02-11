@@ -20,5 +20,16 @@ public class App
         System.out.println("Dependency Injection through constructor:");
         OutputHelperConstructorInjection helperConstruct = (OutputHelperConstructorInjection) context.getBean("OutputHelperConstructorInjection");
         helperConstruct.generateOutput();
+        
+        System.out.println("File names generator:");
+        FileNameGenerator nameGen = (FileNameGenerator) context.getBean("FileNameGeneratorTxt");
+        System.out.println("Text file name: " + nameGen.getFileName());
+        
+        nameGen = (FileNameGenerator) context.getBean("FileNameGeneratorPPT");
+        System.out.println("PPT file name: " + nameGen.getFileName());
+        
+        nameGen = (FileNameGenerator) context.getBean("FileNameGeneratorExcel");
+        System.out.println("Excel file name: " + nameGen.getFileName());
+        
     }
 }

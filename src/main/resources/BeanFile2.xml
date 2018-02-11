@@ -8,7 +8,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator"></bean>
 
 	<!-- Normal way -->
-	<bean id="FileNameGenerator" class="org.learning.spring.FileNameGenerator">
+	<bean id="FileNameGeneratorTxt" class="org.learning.spring.FileNameGenerator">
 		<property name="name">
 			<value>springTxt</value>
 		</property>

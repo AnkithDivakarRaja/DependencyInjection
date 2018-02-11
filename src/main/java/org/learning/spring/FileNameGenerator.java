@@ -18,5 +18,8 @@ public class FileNameGenerator {
 		this.type = type;
 	}
 	
+	String getFileName() {
+		return name + "." + type;
+	}
 	
 }
