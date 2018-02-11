@@ -7,4 +7,10 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="ioGenerator" ref="JSONGenerator"></property>
 	</bean>
 	
+	<bean id="OutputHelperConstructorInjection" class="org.learning.spring.OutputHelperConstructorInjection">
+		<constructor-arg>
+			<bean class ="CSVGenerator"></bean>
+		</constructor-arg>
+	</bean>
+	
 </beans>
