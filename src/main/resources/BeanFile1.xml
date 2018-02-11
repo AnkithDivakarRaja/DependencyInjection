@@ -5,6 +5,10 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<bean id="OutputHelper" class="org.learning.spring.OutputHelper">
 		<property name="ioGenerator" ref="JSONGenerator"></property>
+		<!-- If import statement was not used then use local to refer localbeans -->
+		<!-- <property name="ioGenerator">
+			<ref local = "JSONGenerator"/>
+		</property> -->
 	</bean>
 	
 	<bean id="OutputHelperConstructorInjection" class="org.learning.spring.OutputHelperConstructorInjection">

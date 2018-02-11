@@ -1,9 +1,30 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<bean id="JSONGenerator" class="org.learning.spring.JSONGenerator"></bean>
 	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator"></bean>
+
+	<!-- Normal way -->
+	<bean id="FileNameGenerator" class="org.learning.spring.FileNameGenerator">
+		<property name="name">
+			<value>springTxt</value>
+		</property>
+		
+		<property name="type">
+			<value>txt</value>
+		</property>
+	</bean>
+	
+	<!-- Shortcut way -->
+	<bean id="FileNameGeneratorPPT" class="org.learning.spring.FileNameGenerator" >
+		<property name="name" value="springPPT"/>
+		<property name="type" value="ppt"></property>
+	</bean>
+	
+	<!-- p schema -->
+	<bean id="FileNameGeneratorExcel" class="org.learning.spring.FileNameGenerator" p:name="springExcel" p:type="xls"/>
 
 </beans>
