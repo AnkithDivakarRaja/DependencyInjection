@@ -3,8 +3,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-
-	<import resource="resources/BeanFile1.xml"/>
-	<import resource="resources/BeanFile2.xml"/>
+	<bean id="OutputHelper" class="org.learning.spring.OutputHelper">
+		<property name="ioGenerator" ref="JSONGenerator"></property>
+	</bean>
 	
 </beans>
