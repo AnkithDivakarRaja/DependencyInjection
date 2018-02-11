@@ -13,7 +13,14 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
 	<bean id="OutputHelperConstructorInjection" class="org.learning.spring.OutputHelperConstructorInjection">
 		<constructor-arg>
-			<bean class ="org.learning.spring.CSVGenerator"></bean>
+			<bean class ="org.learning.spring.CSVGenerator">
+				<property name="nameGen">
+					<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+						<property name="name" value="springCsv"></property>
+						<property name="type" value="csv"></property>
+					</bean>	
+				</property>
+			</bean>
 		</constructor-arg>
 	</bean>
 	
