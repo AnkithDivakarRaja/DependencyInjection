@@ -4,8 +4,24 @@ xmlns:p="http://www.springframework.org/schema/p"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="JSONGenerator" class="org.learning.spring.JSONGenerator"></bean>
-	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator"></bean>
+	<bean id="JSONGenerator" class="org.learning.spring.JSONGenerator">
+		<property name="nameGen">
+			<!-- Scope by default is singleton. Other scope values are prototype,request,session,globalSession -->
+			<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+				<property name="name" value="springJson"></property>
+				<property name="type" value="json"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator">
+		<property name="nameGen">
+			<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+				<property name="name" value="springCsv"></property>
+				<property name="type" value="csv"></property>
+			</bean>
+		</property>
+	</bean>
 
 	<!-- Normal way -->
 	<bean id="FileNameGeneratorTxt" class="org.learning.spring.FileNameGenerator">
