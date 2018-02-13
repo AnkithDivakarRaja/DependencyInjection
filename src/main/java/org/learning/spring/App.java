@@ -21,6 +21,7 @@ public class App
         OutputHelperConstructorInjection helperConstruct = (OutputHelperConstructorInjection) context.getBean("OutputHelperConstructorInjection");
         helperConstruct.generateOutput();
         
+        //File Name Generators
         System.out.println("File names generator:");
         FileNameGenerator nameGen = (FileNameGenerator) context.getBean("FileNameGeneratorTxt");
         System.out.println("Text file name: " + nameGen.getFileName());
