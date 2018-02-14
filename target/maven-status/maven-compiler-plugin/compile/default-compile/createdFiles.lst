@@ -1,0 +1,8 @@
+org\learning\spring\OutputHelper.class
+org\learning\spring\FileNameGenerator.class
+org\learning\spring\CSVGenerator.class
+org\learning\spring\JSONGenerator.class
+org\learning\spring\OutputHelperConstructorInjection.class
+org\learning\spring\FileCollections.class
+org\learning\spring\App.class
+org\learning\spring\IOGenerator.class

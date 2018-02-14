@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="JSONGenerator" class="org.learning.spring.JSONGenerator">
+		<property name="nameGen">
+			<!-- Scope by default is singleton. Other scope values are prototype,request,session,globalSession -->
+			<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+				<property name="name" value="springJson"></property>
+				<property name="type" value="json"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="CSVGenerator" class="org.learning.spring.CSVGenerator">
+		<property name="nameGen">
+			<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+				<property name="name" value="springCsv"></property>
+				<property name="type" value="csv"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Normal way -->
+	<bean id="FileNameGeneratorTxt" class="org.learning.spring.FileNameGenerator">
+		<property name="name">
+			<value>springTxt</value>
+		</property>
+		
+		<property name="type">
+			<value>txt</value>
+		</property>
+	</bean>
+	
+	<!-- Shortcut way -->
+	<bean id="FileNameGeneratorPPT" class="org.learning.spring.FileNameGenerator" >
+		<property name="name" value="springPPT"/>
+		<property name="type" value="ppt"></property>
+	</bean>
+	
+	<!-- p schema -->
+	<bean id="FileNameGeneratorExcel" class="org.learning.spring.FileNameGenerator" p:name="springExcel" p:type="xls"/>
+
+</beans>
