@@ -3,12 +3,18 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="FileCollections" class="org.learning.spring">
+	<bean id="FileCollections" class="org.learning.spring.FileCollections">
 		<property name="ioList">
 			<list>
+			<!-- Elements can be added either as new objects or as reference to existing beans -->
 			 <ref bean="JSONGenerator"/>
 			 <bean class="org.learning.spring.CSVGenerator">
-			 	<property name="nameGen" value="FileNameGeneratorPPT"></property>
+			 	<property name="nameGen">
+					<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+						<property name="name" value="springCsv"></property>
+						<property name="type" value="csv"></property>
+					</bean>
+				</property>
 			 </bean>
 			</list>
 		</property>

@@ -32,5 +32,8 @@ public class App
         nameGen = (FileNameGenerator) context.getBean("FileNameGeneratorExcel");
         System.out.println("Excel file name: " + nameGen.getFileName());
         
+        //Collections
+        FileCollections fColl = (FileCollections) context.getBean("FileCollections");
+        System.out.println(fColl.getIoList());
     }
 }
