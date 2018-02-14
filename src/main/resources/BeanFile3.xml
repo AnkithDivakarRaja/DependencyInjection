@@ -18,6 +18,45 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 			 </bean>
 			</list>
 		</property>
+		
+		<property name="ioSet">
+			<set>
+			<!-- Elements can be added either as new objects or as reference to existing beans -->
+			 <ref bean="JSONGenerator"/>
+			 <bean class="org.learning.spring.CSVGenerator">
+			 	<property name="nameGen">
+					<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+						<property name="name" value="springCsv"></property>
+						<property name="type" value="csv"></property>
+					</bean>
+				</property>
+			 </bean>
+			</set>
+		</property>
+		
+		<property name="ioMap">
+			<map>
+				<entry key="JSON" value-ref="JSONGenerator"/>
+				<entry key="CSV" value-ref="CSVGenerator"/>
+				<entry key="CSV1">
+					<bean class="org.learning.spring.CSVGenerator">
+					<property name="nameGen">
+						<bean class="org.learning.spring.FileNameGenerator" scope="prototype">
+							<property name="name" value="springCsv"></property>
+							<property name="type" value="csv"></property>
+						</bean>
+					</property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		
+		<property name="ioProperty">
+			<props>
+				<prop key="fileNameSize">20</prop>
+				<prop key="extentionSize">5</prop>
+			</props>
+		</property>
 	</bean>
 
 </beans>

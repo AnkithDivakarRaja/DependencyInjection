@@ -35,5 +35,8 @@ public class App
         //Collections
         FileCollections fColl = (FileCollections) context.getBean("FileCollections");
         System.out.println(fColl.getIoList());
+        System.out.println(fColl.getIoMap());
+        System.out.println(fColl.getIoSet());
+        System.out.println(fColl.getIoProperty());
     }
 }
