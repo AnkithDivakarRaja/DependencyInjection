@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="FileCollections" class="org.learning.spring">
+		<property name="ioList">
+			<list>
+			 <ref bean="JSONGenerator"/>
+			 <bean class="org.learning.spring.CSVGenerator">
+			 	<property name="nameGen" value="FileNameGeneratorPPT"></property>
+			 </bean>
+			</list>
+		</property>
+	</bean>
+
+</beans>
